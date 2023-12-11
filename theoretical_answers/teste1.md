@@ -48,22 +48,22 @@ Para todos os itens: Informe as bibliotecas usadas, se necessário, o motivo de 
     R: Para esta etapa gosto de utilizar o jupyter notebook para construir o código, carregar os arquivos, aplicar estatística descritiva e fazer a visualização gráfica. Então dentro de um ambiente virtual do python, por exemplo venv ou conda, faço a instalação das bibliotecas Pandas (para manipulação e análise dos dados tabulares), Numpy (para operações numéricas), Matplotlib e Seaborn (ambos para visualização de dados), as quais serão carregadas em um arquivo notebook. Ao carregar essa base de dados como um dataframe do pandas, é possível listar a estrutura das colunas, os tipos de arquivos de cada uma, verificar e tratar os dados faltantes ou nulos e em seguida podemos explorar os dados por meio de gráficos de linhas por exemplo, tendo a coluna data no eixo x e número de produtos no eixo y, isso retornaria o desempenho das vendas ao longo do tempo. Também podemos usar gráfico de barra para visualizar os produtos mais vendidos e suas categorias. Histogramas podem ajudar na visualização da distribuição dos valores de venda. 
 
     b) Como você responderia as seguintes questões:
-        i.      Qual é o desempenho de vendas ao longo do tempo? 
+        i. Qual é o desempenho de vendas ao longo do tempo? 
         R: Faria um gráfico de linhas mostrando as tendências temporais.
 
-        ii.     Quais são os produtos mais vendidos? 
+        ii. Quais são os produtos mais vendidos? 
         R: Um gráfico de barras ou a própria tabela de dados ordenando de forma descendente a colunas de vendas, é capaz de mostrar os produtos mais vendidos. 
 
-        iii.    Como as vendas variam por categoria de produtos? 
+        iii. Como as vendas variam por categoria de produtos? 
         R: Assumindo que já exista a coluna categoria do produto, vamos plotar um gráfico de barras empilhadas ou pizza, para comparar as vendas por categoria. 
 
-        iv.     Qual é a distribuição dos valores de venda? 
+        iv. Qual é a distribuição dos valores de venda? 
         R: Plotar histogramas ou bloxplots pode ajudar entender essa distribuição. 
 
-        v.      Como os preços dos produtos afetam as vendas? 
+        v. Como os preços dos produtos afetam as vendas? 
         R: Podemos fazer um gráfico de dispersão para visualizar a relação entre preços e vendas. 
 
-        vi.     Qual é o perfil dos principais clientes em termos de compras?
+        vi. Qual é o perfil dos principais clientes em termos de compras?
         R: Podemos responder com uma clusterização K-means e posterior histograma das features dos clientes (explicado na questão c abaixo). Com isso será possível responder sobre o perfil de clientes que compram pouco, médio e muito, e sobre o valor dos produtos que costumam pagar. 
 
 
@@ -76,3 +76,17 @@ Para todos os itens: Informe as bibliotecas usadas, se necessário, o motivo de 
 
 EXTRA - Pensando nos dados acima, seria possível fazer mais algum tipo de análise?
 
+## Exercício 3
+
+Suponha que você tenha uma base de dados contendo textos jurídicos, como decisões judiciais, petições e documentos legais. A base de dados inclui informações sobre o conteúdo do texto, data, jurisdição e outras informações relevantes. Seu objetivo é criar um sistema de recomendação que sugira textos jurídicos semelhantes a um texto de referência.
+
+Para todos os itens:  Informe as bibliotecas usadas, se necessário, o motivo de cada decisão, explore as possibilidades.
+
+    a) Descreva como você desenvolveria o sistema de recomendação que recebe um texto de referência e sugere os textos mais semelhantes a ele na base de dados.
+    R: Neste caso podemos aplicar as técnicas de processamento de linguagem natural (PLN) e modelagem de tópicos. A base programática será python onde utilizaremos a biblioteca SpaCy para o pré-processamento dos dados, fazendo a limpeza do texto, remoção de stop words, tokenização, etc. Finalizado o pré-processamento, faremos a representação/vetorização do texto e aqui podemos usar a técnica TF-IDF (Term Frequency-Inverse Document Frequency) por meio do Scikit-learn, para representar a importância relativa de cada termo em um documento em relação à um conjunto de documentos. A métrica usada nessa etapa é a similaridade cosseno e os textos com maior similaridade são recomendados. Essa etapa representa o texto em formato numérico. Então utilizamos a biblioteca gensim para a modelagem de tópicos e cálculo da similaridade de documentos. Nesta etapa já é possível exibir os textos mais semelhantes. Essa recomendação pode ser feita assim construindo o código ou com o uso de framework, como por exemplo o surprise. 
+    
+    b) Como você avaliaria esse sistema de recomendação?
+    R: A avaliação deve considerar o desempenho do sistema em relação a diferentes métricas, buscando assim um modelo que entregue informações relevantes. Para essa tarefa existem algumas opções: Top-K Precision, Top-K Recall, F1-Score, NDCG (Normalized Discounted Cumulative Gain), MAP (Mean Average Precision), Avaliação subjetiva, Avaliação cruzada, Teste A/B. Na etapa de avaliação é importante escolher métricas que estejam alinhadas com os objetivos específicos do sistema. Talvez combinar métricas qualitativas e quantitativas pode ser uma opção para uma visão mais ampla do desempenho do sistema.  
+
+    c) Suponha que novos textos jurídicos sejam adicionados diariamente. Como você manteria o sistema de recomendação atualizado e garantiria que ele continue a fornece recomendações relevantes?
+    R: Neste caso faríamos uma combinação das técnicas de PLN com aprendizado de máquina. Tendo em vista as etapas de desenvolvimento acima, vamos incluir agora, um conjunto de novas etapas que garantirão a atualização e aprendizado contínuo, e para isso ferramentas de sistemas como o Scheduler podem ser utilizadas para programar rotinas de atualização e processamento de novos textos diariamente. Bem como o uso de bibliotecas como Scikit-learn para o aprendizado de máquina, com o objetivo de treinar o modelo frequentemente e manter assim uma base que contempla as mudanças de preferências e de conteúdo jurídico. Além disso, um monitoramemto de desempenho, backup e controle de versão dos modelos treinados e dos pipelines desenvolvidos e obtenção do feedback do usuário são boas práticas.   
