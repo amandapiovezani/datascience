@@ -1,0 +1,30 @@
+1) Como funciona o teste de hipóteses e qual é a sua finalidade na análise estatística?
+R: O teste de hipótese é essencial na análise estatística pois nos permite tomar decisões informadas sobre os parâmetros da população com base em amostras de dados. Faz parte da estatística inferencial, para quando precisamos analisar a veracidade de uma situação por exemplo. Vamos ter uma hipótese nula, que presume não ter diferença ou efeito e uma alternativa, que é a afirmação oposta, sugerindo a presença de efeito ou diferença. O teste vai confrontar essas duas hipóteses na análise e usamos métodos estatísticos (t-test, z-test, chi-square, etc.) para embasar nossa conclusões.
+
+2) O que são redes generativas adversárias (GANs) e quais são os possíveis usos dessas redes?
+R: GANs são um tipo especial de modelo de machine learning, que pertencem à categoria de modelos generativos. O principal conceito por trás das GANs é a ideia de dois modelos neurais distintos, o gerador que é responsável por criar dados sintéticos e um modelo discriminador, que age como um classificador binário, tentando distinguir dados gerados dos reais. Entre as aplicações, GANs podem ser usadas para geração de imagens, transferência de estilo, aprimoramento de resolução de imagem.
+
+3) O que são modelos de linguagem? Qual a diferença entre LLMs e modelos de linguagem tradicionais?
+R: Os modelos de linguagem são estruturas matemáticas que aprendem padrões de linguagem natural. No caso as LLMs, representam uma classe moderna de modelos de linguagem e se destacam pela sua capacidade de aprender representações semânticas complexas diretamente a partir de um grande volume de dados textuais, usando técnicas de aprendizado profundo. Ao contrário dos modelos tradicionais, LLMs não dependem fortemente de regras manuais, ao invés disso, aprendem automaticamente os padrões e relações em dados de texto.
+
+4) Suponha que você tenha um conjunto de dados com três ou mais grupos para comparar e deseja determinar se há diferenças 
+significativas entre eles. Descreva como você escolheria entre o teste ou outras técnicas estatísticas
+R: Antes de aplicar uma ANOVA por exemplo, como uma abordagem estatística padrão, é importante verificar alguns pressupostos como a normalidade dos dados e a homogeneidade das variâncias entre os grupos. Teste de Shapiro-Wilk e teste de Levene são respectivamente duas opções de ferramentas que podemos usar para verificar a normalidade e homogeneidade. De forma geral, saber sobre a distribuição dos dados vai direcionar na escolha do modelo apropriado, evitando resultados distorcidos. 
+
+5) Qual é a importância do pré-processamento de texto em tarefas de NLP? Quais são as etapas comuns no pré-processamento de texto?
+R: O pré-processamento busca normalizar os dados e garantir que só as informações relevantes serão consideradas na análise. De forma geral as principais etapas correspodem: remoção de caracteres especiais e padronização de case (upper ou lower case); tokenização, remoção de stop-words, entre outros.  
+
+6) Descreva o processo de vetorização de texto e como modelos de linguagem como o Word2Vec ou o TF-IDF podem ser usados para representar palavras e documentos.
+R: Vetorização de texto é o processo de representar o texto em vetores numéricos. Word2Vec e TF-IDF são dois métodos comuns para vetorização, contudo podemos dizer que são complementares pois TF-IDF não faz análise semântica das palavras e gera vetores esparsos, enquanto Word2Vec por sua vez, consegue capturar a semântica das palavras e gera modelos densos, eficientes para os modelos.
+
+7) O que é a análise de sentimento em NLP e quais são os principais métodos para realizar essa tarefa? Como você avaliaria a eficácia de um modelo de análise de sentimento?
+R: Análise de sentimento em Processamento de Linguagem Natural (NLP) é a tarefa de determinar a atitude ou emoção expressa em um determinado texto. Entre os principais métodos temos: a abordagem baseada em regras, métodos de aprendizagem de máquina e modelos de linguagem profunda. A valiação de eficácia é crucial para garantir que o modelo seja útil e confiável quando aplicado em caso real. Para isso existem várias etapas, incluindo dividir os dados em treinamento e teste, utilizar métricas apropriadas como precisão, recall, F1-score entre outras, analisar a matriz de confusão, analisar os erros para tentar melhorar o desempenho. É importante destacar que essa avaliação de eficácia é um processo contínuo que envolve uma cobinação de métricas quantitativas, qualitativa e considerações éticas e que tudo isso esteja alinhado com os objetivos definidos.
+
+8) Qual é a diferença entre a classificação de texto e o agrupamento (clustering) de texto em NLP? Em que situações cada um é mais apropriado?
+R: A classificação é um método supervisionado, que tem por objetivo atribuir categorias e pode ser aplicada para previsão de classes conhecidas. Enquanto a clusterização é não supervisionada e portanto não requer dados rotulados, usada para identificar padrões e agrupar documentos sem rótulos pré-definidos. 
+
+9) Explique o conceito de reconhecimento de entidades nomeadas (NER) em NLP e suas aplicações práticas.
+R: NER é uma tarefa fundamental do processo de NLP, que visa identificar e classificar entidades específicas em um texto. Essas entidades podem incluir nome de pessoas, organizações, data entre outros. Entre as aplicações tem-se análise de mídias sociais; processamento automático de E-mail, recuperação de informações, chatbots e assistência virtual. 
+
+10) Como você lidaria com problemas de desequilíbrio de classe em tarefas de classificação de texto em NLP? Quais estratégias seriam eficazes?
+R: Problemas de desequilíbrio ocorrem quando há uma disparidade significativa no número de exemplos entre diferentes classes e isso pode levar a modelos que favorecem a classe majoritária. Para evitar podemos mexer na reamostragem dos dados, na ponderação dos pesos das classes, entre outras. 
